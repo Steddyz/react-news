@@ -9,6 +9,14 @@ export default function Categories({
 }) {
   return (
     <div className={cl.categories}>
+      <button
+        onClick={() => {
+          setSelectedCategory(null);
+        }}
+        className={!selectedCategory ? cl.active : cl.item}
+      >
+        All
+      </button>
       {categories.map((category) => {
         return (
           <button

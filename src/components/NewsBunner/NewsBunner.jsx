@@ -3,8 +3,9 @@ import Image from "../Image/Image";
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
 
 import cl from "./NewsBunner.module.css";
+import withSkeleton from "../../helpers/hocs/withSkeleton";
 
-export default function NewsBunner({ item }) {
+const NewsBunner = ({ item }) => {
   return (
     <div className={cl.banner}>
       <Image image={item?.image} />
@@ -14,4 +15,8 @@ export default function NewsBunner({ item }) {
       </p>
     </div>
   );
-}
+};
+
+const NewsBannerWithSkeleton = withSkeleton(NewsBunner, "banner", 1);
+
+export default NewsBannerWithSkeleton;

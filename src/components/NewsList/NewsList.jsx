@@ -2,8 +2,9 @@ import React from "react";
 
 import cl from "./NewsList.module.css";
 import NewsItem from "../NewsItem/NewsItem";
+import withSkeleton from "../../helpers/hocs/withSkeleton";
 
-export default function NewsList({ news }) {
+const NewsList = ({ news }) => {
   return (
     <ul className={cl.list}>
       {news.map((item) => {
@@ -11,4 +12,8 @@ export default function NewsList({ news }) {
       })}
     </ul>
   );
-}
+};
+
+const NewsListWithSkeleton = withSkeleton(NewsList, "item", 10);
+
+export default NewsListWithSkeleton;
