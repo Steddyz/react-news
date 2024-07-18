@@ -3,7 +3,6 @@ import Image from "../Image/Image";
 import { formatTimeAgo } from "../../helpers/formatTimeAgo";
 
 import cl from "./NewsBunner.module.css";
-import withSkeleton from "../../helpers/hocs/withSkeleton";
 
 const NewsBunner = ({ item }) => {
   return (
@@ -17,6 +16,4 @@ const NewsBunner = ({ item }) => {
   );
 };
 
-const NewsBannerWithSkeleton = withSkeleton(NewsBunner, "banner", 1);
-
-export default NewsBannerWithSkeleton;
+export default NewsBunner;

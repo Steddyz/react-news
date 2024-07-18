@@ -2,11 +2,15 @@ import React from "react";
 
 import cl from "./Skeleton.module.css";
 
-export default function Skeleton({ count = 1, type = "banner" }) {
+export default function Skeleton({
+  count = 1,
+  type = "banner",
+  direction = "column",
+}) {
   return (
     <div>
       {count > 1 ? (
-        <ul className={cl.list}>
+        <ul className={direction === "column" ? cl.column__list : cl.row__list}>
           {[...Array(count)].map((_, index) => (
             <li
               key={index}
